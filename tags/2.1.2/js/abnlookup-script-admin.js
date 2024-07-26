@@ -8,6 +8,30 @@ function itsg_gf_abnlookup_form_has_abnlookup() {
 	}
 }
 
+function itsg_gf_abnlookup_click_function(element) {
+    if (element.id === 'field_enable_abnlookup' && element.checked) {
+        // 启用ABN Lookup
+        jQuery('#field_validate_abnlookup').closest('li').show();
+    } else if (element.id === 'field_validate_abnlookup' && element.value === 'companyname') {
+        // 更改按钮文本为“Check Availability”
+        jQuery('#gform_submit_button').val('Check Availability');
+    } else {
+        // 默认情况
+        jQuery('#gform_submit_button').val('Submit');
+    }
+}
+
+jQuery(document).ready(function() {
+    jQuery('#field_enable_abnlookup').on('click', function() {
+        itsg_gf_abnlookup_click_function(this);
+    });
+
+    jQuery('#field_validate_abnlookup').on('change', function() {
+        itsg_gf_abnlookup_click_function(this);
+    });
+});
+
+
 jQuery(document).bind('gform_load_field_settings', function(event, field, form) {
 	// we only need to add in the ABN Lookup result settings if we actually have an ABN lookup in the form
 		
