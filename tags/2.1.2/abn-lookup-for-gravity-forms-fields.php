@@ -590,6 +590,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<option value="activeabn"><?php esc_html_e('Active ABN', 'abn-lookup-for-gravity-forms'); ?></option>
 						<option value="reggst"><?php esc_html_e('Registered for GST', 'abn-lookup-for-gravity-forms'); ?></option>
 						<option value="notreggst"><?php esc_html_e('Not Registered for GST', 'abn-lookup-for-gravity-forms'); ?></option>
+						<option value="companyname"><?php esc_html_e('Company Name', 'abn-lookup-for-gravity-forms'); ?></option> <!-- 新增选项 -->
 					</select>
 				</li>
 
